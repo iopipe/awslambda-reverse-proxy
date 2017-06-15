@@ -1,0 +1,24 @@
+# For full config options, check the docs:
+#    docs.serverless.com
+
+service: aws-nodejs
+
+# You can pin your service to only deploy with a specific Serverless version
+# Check out our docs for more details
+# frameworkVersion: "=X.X.X"
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  region: us-west-1
+
+functions:
+  proxy:
+    handler: handler.proxy
+    events:
+      - http:
+          path: /
+          method: any
+    environment:
+      URL: https://www.google.com/
+      AWS_SIGN_REQUESTS: true

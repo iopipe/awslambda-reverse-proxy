@@ -1,0 +1,8 @@
+Serverless reverse proxy
+
+Requirements:
+- Serverless Framework 1.0+
+- NodeJS
+
+Deploy using `sls deploy`. Optionally configure environment variables
+in the serverless.yml file.
