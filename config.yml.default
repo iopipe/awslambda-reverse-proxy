@@ -1,2 +1,3 @@
 URL: https://example.com
 #AWS_SIGN_REQUESTS: true
+#IOPIPE_TOKEN: <get from IOpipe project installation instructions>

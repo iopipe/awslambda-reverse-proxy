@@ -12,6 +12,11 @@ provider:
   runtime: nodejs6.10
   region: us-west-1
 
+plugins:
+  - serverless-plugin-iopipe
+custom:
+  iopipeToken: ${file(./config.yml):IOPIPE_TOKEN}
+
 functions:
   proxy:
     handler: handler.proxy

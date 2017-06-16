@@ -9,6 +9,7 @@
   "author": "Erica Windisch <erica@iopipe.com>",
   "license": "Apache-2.0",
   "dependencies": {
-    "aws4": "^1.6.0"
+    "aws4": "^1.6.0",
+    "serverless-plugin-iopipe": "^0.2.1"
   }
 }
