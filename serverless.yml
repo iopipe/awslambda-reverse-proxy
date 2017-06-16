@@ -20,5 +20,5 @@ functions:
           path: /
           method: any
     environment:
-      URL: https://www.google.com/
-      AWS_SIGN_REQUESTS: true
+      URL: ${file(./config.yml):URL}
+      AWS_SIGN_REQUESTS: ${file(./config.yml):AWS_SIGN_REQUESTS}

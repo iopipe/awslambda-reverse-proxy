@@ -5,7 +5,7 @@ by setting the `AWS_SIGN_REQUESTS` environment variable.
 
 ## Installation
 
-Edit `serverless.yml` and edit the URL variable to point to your backend
+Edit `config.yml` and edit the URL variable to point to your backend
 URL. Optionally set `AWS_SIGN_REQUESTS` if requests should be signed to the
 backend services.
 
