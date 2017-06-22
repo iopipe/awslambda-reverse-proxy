@@ -28,10 +28,12 @@ module.exports.proxy = (event, context, callback) => {
     resBody += chunk
   })
   .on('end', () => {
-    callback(null, {
+    var response = {
       statusCode: res.statusCode,
       headers: res.headers,
       body: resBody
-    })
+    }
+    console.log(response)
+    callback(null, response)
   })
 };

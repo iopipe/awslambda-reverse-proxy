@@ -10,6 +10,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "aws4": "^1.6.0",
+    "iopipe": "^0.5.0",
     "serverless-plugin-iopipe": "^0.2.1"
   }
 }
