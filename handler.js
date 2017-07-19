@@ -1,11 +1,16 @@
 'use strict';
 const http = require('http')
 const url = require('url')
+const ioProfiler = require('lambda-profiler')({})
 
+var signRequest = (requestOptions) => { return requestOptions }
 if (process.env.AWS_SIGN_REQUESTS) {
-  const signRequest = require('aws4').sign
-} else {
-  const signRequest = (requestOptions) => { return requestOptions }
+  signRequest = require('aws4').sign
+}
+
+var profiler = (func) => { return func }
+if (process.env.TRACE_REQUESTS) {
+  profiler = ioProfiler
 }
 
 const httpAgent = http.Agent({
@@ -13,8 +18,8 @@ const httpAgent = http.Agent({
   keepAliveMsecs: 300000
 })
 
-module.exports.proxy = (event, context, callback) => {
-  var req = http.request(signRequest({
+module.exports.proxy = profiler((event, context, callback) => {
+  var res = http.request(signRequest({
     hostname: process.env.URL,
     method: event.httpMethod,
     headers: event.headers,
@@ -36,4 +41,4 @@ module.exports.proxy = (event, context, callback) => {
     console.log(response)
     callback(null, response)
   })
-};
+})
