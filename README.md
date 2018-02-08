@@ -1,5 +1,7 @@
 # Serverless reverse proxy
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/iopipe/awslambda-reverse-proxy.svg)](https://greenkeeper.io/)
+
 Provides a reverse proxy into VPC resources on AWS. Can optionally sign requests
 by setting the `AWS_SIGN_REQUESTS` environment variable.
 
